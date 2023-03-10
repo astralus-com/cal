@@ -248,11 +248,11 @@ export default class Office365CalendarService implements Calendar {
         content: getRichDescription(event),
       },
       start: {
-        dateTime: dayjs(event.startTime).utcOffset(utcOffset).format(),
+        dateTime: event.startTime,
         timeZone: event.organizer.timeZone,
       },
       end: {
-        dateTime: dayjs(event.endTime).utcOffset(utcOffset).format(),
+        dateTime: event.endTime,
         timeZone: event.organizer.timeZone,
       },
       attendees: event.attendees.map((attendee) => ({
